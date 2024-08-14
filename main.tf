@@ -53,7 +53,7 @@ resource "aws_key_pair" "deployer" {
 }
 
 data "template_file" "user_data" {
-    template = file("/home/admin/060_Modules/terraform-aws-apache-example/userdata.yaml")
+    template = file("${path.module}/userdata.yaml")
 }
 
 data "aws_ami" "amazon-linux-2" {
