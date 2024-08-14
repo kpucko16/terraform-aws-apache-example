@@ -53,7 +53,7 @@ resource "aws_key_pair" "deployer" {
 }
 
 data "template_file" "user_data" {
-    template = file("${path.module}/userdata.yaml")
+    template = file("${abspath(path.module)}/userdata.yaml")
 }
 
 data "aws_ami" "amazon-linux-2" {
