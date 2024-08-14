@@ -47,6 +47,10 @@ resource "aws_security_group" "sg_my_test" {
   ]
 }
 
+resource "aws_s3_bucket" "na_kris_kofata" {
+  bucket = var.bucket_name
+}
+
 resource "aws_key_pair" "deployer" {
   key_name   = "my-test-key"
   public_key = var.public_key
